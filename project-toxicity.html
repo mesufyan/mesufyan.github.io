@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toxicity Prediction in Head &amp;amp;amp; Neck Cancer using Machine Learning — Muhammad Sufyan</title>
+<meta name="description" content="ML toxicity prediction in head &amp; neck cancer — Muhammad Sufyan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body><nav class="nav"><div class="wrap">
+<a class="brand" href="index.html">Muhammad <span>Sufyan</span></a>
+<button class="navtoggle" aria-label="Menu" onclick="document.getElementById('nv').classList.toggle('open')">&#9776;</button>
+<div class="navlinks" id="nv"><a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html" class="active">Projects</a><a href="cv.html">CV &amp; Contact</a></div>
+</div></nav><header class="phero"><div class="wrap">
+<a class="back" href="projects.html">&larr; All projects</a>
+<p class="eyebrow">Research internship</p>
+<h1>Toxicity Prediction in Head &amp; Neck Cancer using Machine Learning</h1>
+<div class="meta"><span><b>Role:</b> Research Intern</span><span><b>Where:</b> LPC Caen</span><span><b>Supervisors:</b> Prof. Juliette Thariat, Ozgur Ozer</span><span><b>Stack:</b> Python, LightGBM, Optuna, SHAP</span></div>
+<p class="summary">A reproducible LightGBM pipeline that predicts xerostomia, mucositis and dysphagia in 684 patients from clinical and dose-volume data &mdash; with interpretability built in and limitations stated plainly.</p>
+<div class="linkrow"><a class="btn btn-primary" href="https://github.com/mesufyan/Toxicity-Prediction">&#9733; View repository</a></div>
+</div></header>
+<section class="psec"><div class="wrap fade"><h2>The problem</h2>
+<p>Modern radiotherapy delivers remarkably conformal dose, yet patients still develop normal-tissue toxicities that classical low-dimensional models struggle to predict. For head &amp; neck cancer this is acute: targets sit among organs that control salivation, swallowing and speech, so small dose differences translate into real quality-of-life effects.</p>
+<p>The question I tackled: can routinely collected clinical variables and DVH-derived dose descriptors predict, patient by patient, the risk of three key toxicities &mdash; <b>xerostomia, mucositis, and dysphagia</b>?</p></div></section><section class="psec"><div class="wrap fade"><h2>What I did</h2>
+<p>I built an end-to-end, reproducible machine-learning pipeline on a multicentre cohort of <b>684 head &amp; neck patients</b> from the GORTEC trial network, treating each toxicity as a binary outcome (CTCAE grade 3&ndash;5 = severe).</p><ul><li><b>Data engineering:</b> linked baseline, treatment, toxicity and follow-up tables; ordinal-encoded clinical stage; engineered BMI and dose-per-fraction; ran automated integrity checks (deepchecks).</li><li><b>DVH features:</b> extracted dose metrics for anatomically relevant organs at risk per endpoint &mdash; parotids and submandibular glands for xerostomia, oral cavity for mucositis, PCM and oesophagus for dysphagia.</li><li><b>Modelling:</b> LightGBM gradient-boosted trees, with an 80/20 stratified split and stratified 3-fold CV used only inside the training set; Optuna hyperparameter search; KNN imputation for DVH features.</li><li><b>Interpretability:</b> SHAP and feature-importance analysis to check the learned drivers were clinically plausible.</li></ul></div></section><section class="psec"><div class="wrap fade"><h2>Results</h2>
+<p>Enriched DVH-&ldquo;bag&rdquo; features improved discrimination for two of the three endpoints. Crucially, the most important features were clinically sensible &mdash; parotid dose dominated xerostomia, oral-cavity dose dominated mucositis.</p><table class="rtable"><tr><th>Endpoint</th><th>ROC-AUC (no DVH)</th><th>ROC-AUC (+ DVH)</th><th>Top driver</th></tr><tr><td>Xerostomia</td><td class="mono">0.577</td><td class="mono">0.685</td><td>Parotid R Dmean</td></tr><tr><td>Mucositis</td><td class="mono">0.538</td><td class="mono">0.670</td><td>Oral cavity Dmean</td></tr><tr><td>Dysphagia</td><td class="mono">0.490</td><td class="mono">0.525</td><td>Oral cavity Dnear-max</td></tr></table><div class="stats"><div class="stat"><div class="num">684</div><div class="lbl">patients</div></div><div class="stat"><div class="num">3</div><div class="lbl">toxicity endpoints</div></div><div class="stat"><div class="num">+0.13</div><div class="lbl">AUC gain (mucositis)</div></div></div><p>Performance stayed deliberately honest: DVHs compress a full 3D dose field into a few numbers, so they can only go so far. That finding directly motivates the spatial, multimodal direction of my thesis.</p></div></section><section class="psec"><div class="wrap fade"><h2>What I took from it</h2>
+<p>The pipeline is reproducible and the limitations are explicit &mdash; modest cohort size, single test split, and the information lost when 3D dose is reduced to DVH summaries. The natural next step, which I am now pursuing, is richer dose/anatomy representations and multiple-instance learning that keeps spatial structure.</p>
+<div class="note">Code, preprocessing and model pipeline are public on GitHub.</div></div></section><footer><div class="wrap" style="flex-direction:column;align-items:stretch">
+<div class="spectrum-line"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+<span class="small">Muhammad Sufyan &middot; Caen, France</span>
+<span class="small"><a href="mailto:muhammad.sufyan@etu.unicaen.fr">muhammad.sufyan@etu.unicaen.fr</a> &middot;
+<a href="https://github.com/mesufyan">GitHub</a> &middot; <a href="https://www.linkedin.com/in/sufyann">LinkedIn</a> &middot;
+<a href="https://orcid.org/0009-0007-3161-0716">ORCID</a></span>
+</div></div></footer>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script></body></html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Muhammad Sufyan — AI for Radiation Oncology</title>
+<meta name="description" content="Muhammad Sufyan — medical physicist working on machine learning for radiotherapy quality assurance.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body><nav class="nav"><div class="wrap">
+<a class="brand" href="index.html">Muhammad <span>Sufyan</span></a>
+<button class="navtoggle" aria-label="Menu" onclick="document.getElementById('nv').classList.toggle('open')">&#9776;</button>
+<div class="navlinks" id="nv"><a href="index.html" class="active">Home</a><a href="research.html">Research</a><a href="projects.html">Projects</a><a href="cv.html">CV &amp; Contact</a></div>
+</div></nav><header class="hero"><div class="wrap"><div class="hero-grid">
+<div class="fade in">
+<p class="eyebrow">AI for Radiation Oncology</p>
+<h1>Muhammad Sufyan</h1>
+<p class="lead">Medical physicist building <b>interpretable machine-learning</b> for quality assurance and treatment optimisation in radiotherapy.</p>
+<div class="btns">
+<a class="btn btn-primary" href="projects.html">View projects</a>
+<a class="btn btn-ghost" href="assets/Muhammad_Sufyan_CV.pdf" download>Download CV</a>
+</div>
+<div class="social">
+<a href="mailto:muhammad.sufyan@etu.unicaen.fr">&#9993; Email</a>
+<a href="https://github.com/mesufyan">&#9733; GitHub</a>
+<a href="https://www.linkedin.com/in/sufyann">in LinkedIn</a>
+<a href="https://orcid.org/0009-0007-3161-0716">iD ORCID</a>
+</div>
+</div>
+<div class="portrait-card fade in">
+<img class="portrait" src="assets/sufyan.png" alt="Muhammad Sufyan">
+<div class="dvh-wrap"><svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" class="dvh" role="img" aria-label="Dose-volume histogram illustration">
+<defs>
+<linearGradient id="sp" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#2E4A8F"/><stop offset="0.3" stop-color="#1FA0B3"/>
+<stop offset="0.55" stop-color="#4FB36B"/><stop offset="0.78" stop-color="#E8B23A"/>
+<stop offset="1" stop-color="#D6453C"/></linearGradient></defs>
+<rect x="48" y="14" width="352" height="216" fill="#fff" stroke="#E2E7ED"/>
+<!-- grid -->
+<g stroke="#EEF2F6" stroke-width="1">
+<line x1="48" y1="68" x2="400" y2="68"/><line x1="48" y1="122" x2="400" y2="122"/>
+<line x1="48" y1="176" x2="400" y2="176"/>
+<line x1="136" y1="14" x2="136" y2="230"/><line x1="224" y1="14" x2="224" y2="230"/>
+<line x1="312" y1="14" x2="312" y2="230"/></g>
+<!-- axes -->
+<line x1="48" y1="230" x2="400" y2="230" stroke="#14202E" stroke-width="1.5"/>
+<line x1="48" y1="14" x2="48" y2="230" stroke="#14202E" stroke-width="1.5"/>
+<!-- target (CTV): stays at 100% then steep drop near prescription -->
+<path class="dvh-line" d="M48,20 L300,20 C322,20 332,60 340,140 C346,200 360,224 400,226"
+ fill="none" stroke="#D6453C" stroke-width="2.6"/>
+<!-- OAR 1 (parotid): drops early -->
+<path class="dvh-line" d="M48,20 C110,30 150,120 210,190 C250,220 300,226 400,228"
+ fill="none" stroke="#1FA0B3" stroke-width="2.4" style="animation-delay:.5s"/>
+<!-- OAR 2: drops earliest -->
+<path class="dvh-line" d="M48,20 C90,40 120,160 170,210 C210,226 280,228 400,229"
+ fill="none" stroke="#4FB36B" stroke-width="2.2" style="animation-delay:.7s"/>
+<!-- labels -->
+<text x="232" y="252" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B7C8E" text-anchor="middle">Dose &rarr;</text>
+<text x="20" y="125" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B7C8E" transform="rotate(-90,20,125)" text-anchor="middle">Volume %</text>
+<rect x="318" y="30" width="74" height="3" fill="url(#sp)" rx="2"/>
+<text x="318" y="48" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#6B7C8E">isodose scale</text>
+</svg>
+<div class="dvh-cap">A dose&ndash;volume histogram &mdash; the everyday artefact of the work: target coverage held high, organs at risk pushed low.</div>
+</div>
+</div>
+</div></div></header>
+
+<section class="block"><div class="wrap">
+<div class="rule"></div>
+<div class="about fade">
+<div><h2 style="font-size:30px">At the interface of physics, data, and the clinic</h2></div>
+<div>
+<p>I am a graduate researcher at <b>LPC Caen</b> and the <b>Centre Fran&ccedil;ois Baclesse</b>, where I develop predictive models to improve dose quality assurance (Dose QA) in radiotherapy clinical trials. My work draws on DVH features, RT-DICOM data (CT, RTSTRUCT, RTDOSE) and medical imaging to make automated QA more consistent, transparent, and fair.</p>
+<p>I am completing an Erasmus Mundus Joint Master&rsquo;s in Nuclear Physics across <b>Seville, Catania, and Caen</b>, building on a physics background that spans particle theory, plasma diagnostics, and Monte&nbsp;Carlo dosimetry. My through-line is the same: combining computational methods with problems that have direct clinical impact in cancer care.</p>
+</div>
+</div>
+</div></section>
+
+<section class="block"><div class="wrap">
+<div class="glance fade">
+<div class="cell"><div class="k">Now</div><div class="v">Graduate Researcher, LPC Caen &amp; Centre Fran&ccedil;ois Baclesse</div></div>
+<div class="cell"><div class="k">Studying</div><div class="v">MSc Medical Physics, Universit&eacute; de Caen Normandie</div></div>
+<div class="cell"><div class="k">Modelled</div><div class="v">684 head &amp; neck patients in ML toxicity pipelines</div></div>
+<div class="cell"><div class="k">Toolkit</div><div class="v">Python &middot; PyTorch &middot; LightGBM &middot; Pydicom &middot; MatRad</div></div>
+</div>
+</div></section>
+
+<section class="block"><div class="wrap">
+<div class="sec-head fade"><p class="eyebrow">PhD direction</p>
+<h2>Quantify &rarr; Integrate &rarr; Automate</h2>
+<p>My thesis lays the foundation for a doctoral project that rethinks radiotherapy QA in three stages &mdash; from a new measure of anatomical complexity to a fully automated, multimodal classifier.</p></div>
+<div class="arc fade">
+<div class="step"><div class="bar"></div><div class="no">01 &middot; QUANTIFY</div><h3>Tumour Topology Complexity</h3><p>A geometric descriptor (GVC) that captures how intrinsically hard a case is to treat &mdash; anatomy plus machine deliverability.</p></div>
+<div class="step"><div class="bar"></div><div class="no">02 &middot; INTEGRATE</div><h3>A fairer QA verdict</h3><p>Use the descriptor to split a failed plan into &ldquo;suboptimal planning&rdquo; vs &ldquo;complexity-limited&rdquo;, beyond a blunt pass/fail.</p></div>
+<div class="step"><div class="bar"></div><div class="no">03 &middot; AUTOMATE</div><h3>Multimodal learning</h3><p>Attention-based Multiple Instance Learning on tabular + DICOM data to predict the new QA classes automatically.</p></div>
+</div>
+</div></section><footer><div class="wrap" style="flex-direction:column;align-items:stretch">
+<div class="spectrum-line"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+<span class="small">Muhammad Sufyan &middot; Caen, France</span>
+<span class="small"><a href="mailto:muhammad.sufyan@etu.unicaen.fr">muhammad.sufyan@etu.unicaen.fr</a> &middot;
+<a href="https://github.com/mesufyan">GitHub</a> &middot; <a href="https://www.linkedin.com/in/sufyann">LinkedIn</a> &middot;
+<a href="https://orcid.org/0009-0007-3161-0716">ORCID</a></span>
+</div></div></footer>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script></body></html>

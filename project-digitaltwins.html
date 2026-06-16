@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digital Twins in Radiotherapy: Beam Comparison &amp;amp;amp; Plan Optimisation — Muhammad Sufyan</title>
+<meta name="description" content="Digital twins in radiotherapy with MatRad — Muhammad Sufyan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body><nav class="nav"><div class="wrap">
+<a class="brand" href="index.html">Muhammad <span>Sufyan</span></a>
+<button class="navtoggle" aria-label="Menu" onclick="document.getElementById('nv').classList.toggle('open')">&#9776;</button>
+<div class="navlinks" id="nv"><a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html" class="active">Projects</a><a href="cv.html">CV &amp; Contact</a></div>
+</div></nav><header class="phero"><div class="wrap">
+<a class="back" href="projects.html">&larr; All projects</a>
+<p class="eyebrow">Summer internship</p>
+<h1>Digital Twins in Radiotherapy: Beam Comparison &amp; Plan Optimisation</h1>
+<div class="meta"><span><b>Role:</b> Summer Intern</span><span><b>Where:</b> Centre Fran&ccedil;ois Baclesse</span><span><b>Supervisors:</b> Prof. Juliette Thariat, Dr. Thao Nguyen Pham</span><span><b>Stack:</b> MatRad, DICOM, DVH</span></div>
+<p class="summary">Patient-specific MatRad simulations comparing photon, proton, helium and carbon-ion plans &mdash; quantifying which modality best spares vision-critical organs while covering the tumour.</p>
+
+</div></header>
+<section class="psec"><div class="wrap fade"><h2>The problem</h2>
+<p>The central trade-off in radiotherapy is coverage versus collateral: deliver enough dose to the tumour while sparing nearby organs at risk. In head cases this is unforgiving &mdash; targets sit beside optic nerves, the chiasm and the retina, where excess dose can cost a patient their vision.</p>
+<p>Different beam types behave very differently here. Could a patient-specific &ldquo;digital twin&rdquo; simulate and compare them objectively before any treatment decision?</p></div></section><section class="psec"><div class="wrap fade"><h2>What I did</h2>
+<p>Working from anonymised DICOM data for five previously treated patients, I built digital-twin simulations in <b>MatRad</b> (an open-source planning system) and compared four modalities &mdash; <b>photons, protons, helium ions and carbon ions</b>.</p><ul><li>Imported CT and segmented critical structures; configured beam types and incidence angles.</li><li>Ran dose optimisation, then analysed dose&ndash;volume histograms, conformity and homogeneity indices, and NTCP.</li><li>Evaluated a conventional 5-beam photon plan and matched 2-beam plans across all four modalities for a like-for-like comparison.</li></ul></div></section><section class="psec"><div class="wrap fade"><h2>Results</h2>
+<p>Mean dose to critical structures fell sharply as the modality became more conformal. Helium ions gave the best overall balance &mdash; sparing the chiasm even better than carbon, thanks to reduced lateral scatter and little nuclear fragmentation &mdash; while holding target coverage.</p><table class="rtable"><tr><th>Modality (2-beam)</th><th>Chiasma mean</th><th>CTV mean</th><th>Note</th></tr><tr><td>Photon</td><td class="mono">0.475</td><td class="mono">1.000</td><td>Broadest low-dose bath</td></tr><tr><td>Proton</td><td class="mono">0.500</td><td class="mono">0.998</td><td>Improved localisation</td></tr><tr><td>Helium</td><td class="mono">0.220</td><td class="mono">0.995</td><td>Best OAR sparing</td></tr><tr><td>Carbon</td><td class="mono">0.368</td><td class="mono">0.997</td><td>Sharp fall-off</td></tr></table><p class="cap" style="font-size:12px;color:var(--muted)">Doses normalised to prescription. Helium consistently spared organs at risk best while keeping target coverage.</p><div class="stats"><div class="stat"><div class="num">4</div><div class="lbl">beam modalities</div></div><div class="stat"><div class="num">5</div><div class="lbl">patient twins</div></div><div class="stat"><div class="num">30 Gy</div><div class="lbl">prescription</div></div></div></div></section><section class="psec"><div class="wrap fade"><h2>Why it matters</h2>
+<p>This work laid the first foundations of a predictive digital twin for radiotherapy: a virtual patient that integrates anatomy, imaging and dose to compare strategies and, in the longer term, anticipate toxicity. It also fed a manuscript on comparative NTCP outcomes in digital-twin plans.</p></div></section><footer><div class="wrap" style="flex-direction:column;align-items:stretch">
+<div class="spectrum-line"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+<span class="small">Muhammad Sufyan &middot; Caen, France</span>
+<span class="small"><a href="mailto:muhammad.sufyan@etu.unicaen.fr">muhammad.sufyan@etu.unicaen.fr</a> &middot;
+<a href="https://github.com/mesufyan">GitHub</a> &middot; <a href="https://www.linkedin.com/in/sufyann">LinkedIn</a> &middot;
+<a href="https://orcid.org/0009-0007-3161-0716">ORCID</a></span>
+</div></div></footer>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script></body></html>

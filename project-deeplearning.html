@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deep Learning for Particle-Physics Event Classification — Muhammad Sufyan</title>
+<meta name="description" content="Deep learning for particle physics classification — Muhammad Sufyan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body><nav class="nav"><div class="wrap">
+<a class="brand" href="index.html">Muhammad <span>Sufyan</span></a>
+<button class="navtoggle" aria-label="Menu" onclick="document.getElementById('nv').classList.toggle('open')">&#9776;</button>
+<div class="navlinks" id="nv"><a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html" class="active">Projects</a><a href="cv.html">CV &amp; Contact</a></div>
+</div></nav><header class="phero"><div class="wrap">
+<a class="back" href="projects.html">&larr; All projects</a>
+<p class="eyebrow">Laboratory project</p>
+<h1>Deep Learning for Particle-Physics Event Classification</h1>
+<div class="meta"><span><b>Type:</b> Lab project</span><span><b>Stack:</b> Python, PyTorch, Optuna</span><span><b>Data:</b> 7,600 events</span></div>
+<p class="summary">A PyTorch neural network that separates signal from background in high-energy physics events &mdash; built end to end with custom data pipelines, augmentation, Optuna tuning and proper evaluation.</p>
+
+</div></header>
+<section class="psec"><div class="wrap fade"><h2>The task</h2>
+<p>High-energy physics produces huge numbers of collision events, only some of which are signal. The classic ML problem is to separate signal from background from a set of measured features &mdash; a clean setting to build a deep-learning pipeline end to end.</p></div></section><section class="psec"><div class="wrap fade"><h2>What I did</h2>
+<p>I implemented a multi-layer neural network in <b>PyTorch</b> for binary classification of high-energy physics events on a 7,600-sample dataset, taking the pipeline from raw data to a fully evaluated model.</p><ul><li>Wrote a custom <b>Dataset</b> and <b>DataLoader</b> for batching and shuffling.</li><li>Applied <b>data augmentation</b> to improve generalisation on the limited sample.</li><li>Tuned architecture and training with <b>Optuna</b>.</li><li>Evaluated with accuracy, precision, recall and AUC-ROC &mdash; not accuracy alone.</li></ul></div></section><section class="psec"><div class="wrap fade"><h2>Why it matters here</h2>
+<p>This project is the methodological bridge to my clinical work: the same PyTorch fundamentals, custom data pipelines and rigorous evaluation now underpin the attention-based multimodal models in my radiotherapy QA thesis.</p><div class="stats"><div class="stat"><div class="num">7,600</div><div class="lbl">samples</div></div><div class="stat"><div class="num">PyTorch</div><div class="lbl">framework</div></div><div class="stat"><div class="num">AUC-ROC</div><div class="lbl">headline metric</div></div></div></div></section><footer><div class="wrap" style="flex-direction:column;align-items:stretch">
+<div class="spectrum-line"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+<span class="small">Muhammad Sufyan &middot; Caen, France</span>
+<span class="small"><a href="mailto:muhammad.sufyan@etu.unicaen.fr">muhammad.sufyan@etu.unicaen.fr</a> &middot;
+<a href="https://github.com/mesufyan">GitHub</a> &middot; <a href="https://www.linkedin.com/in/sufyann">LinkedIn</a> &middot;
+<a href="https://orcid.org/0009-0007-3161-0716">ORCID</a></span>
+</div></div></footer>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script></body></html>

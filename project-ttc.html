@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automating Quality Assurance in Radiotherapy Clinical Trials — Muhammad Sufyan</title>
+<meta name="description" content="Tumour Topology Complexity for radiotherapy QA — Muhammad Sufyan&#x27;s thesis.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body><nav class="nav"><div class="wrap">
+<a class="brand" href="index.html">Muhammad <span>Sufyan</span></a>
+<button class="navtoggle" aria-label="Menu" onclick="document.getElementById('nv').classList.toggle('open')">&#9776;</button>
+<div class="navlinks" id="nv"><a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html" class="active">Projects</a><a href="cv.html">CV &amp; Contact</a></div>
+</div></nav><header class="phero"><div class="wrap">
+<a class="back" href="projects.html">&larr; All projects</a>
+<p class="eyebrow">Master's thesis &middot; current</p>
+<h1>Automating Quality Assurance in Radiotherapy Clinical Trials</h1>
+<div class="meta"><span><b>Role:</b> Graduate Researcher</span><span><b>Where:</b> LPC Caen &amp; Centre Fran&ccedil;ois Baclesse</span><span><b>Supervisor:</b> Prof. Juliette Thariat</span><span><b>Stack:</b> Python, PyTorch, Pydicom</span></div>
+<p class="summary">Radiotherapy QA tells you a plan failed, not why. I built a geometric descriptor of anatomical complexity so QA can tell a badly-planned case apart from an intrinsically hard one &mdash; the foundation of my PhD.</p>
+
+</div></header>
+<section class="psec"><div class="wrap fade"><h2>The problem</h2>
+<p>In radiotherapy clinical trials, every treatment plan is checked by experts before delivery &mdash; quality assurance (QA). Today that check is largely manual, expert-dependent, and returns a blunt verdict: <b>pass or fail</b>. When a plan fails, the verdict doesn&rsquo;t say <i>why</i>.</p>
+<p>That ambiguity matters. A plan can fail because it was planned badly, or because the patient&rsquo;s anatomy is intrinsically so complex that no plan could fully spare the organs at risk. Treating both the same way makes QA inconsistent across centres and hard to standardise or scale.</p></div></section><section class="psec"><div class="wrap fade"><h2>My approach &mdash; Quantify, Integrate, Automate</h2>
+<p>The thesis introduces a way to measure how hard a case actually is, integrate that measure into the QA verdict, and ultimately learn it automatically.</p><div class="phases"><div class="phase"><div class="ph">PHASE I</div><h3>Quantify</h3><p>Define Tumour Topology Complexity (TTC) per organ and per patient.</p></div><div class="phase"><div class="ph">PHASE II</div><h3>Integrate</h3><p>Redefine QA into four meaningful classes using the descriptor.</p></div><div class="phase"><div class="ph">PHASE III</div><h3>Automate</h3><p>Predict the new classes with multimodal attention-based learning.</p></div></div></div></section><section class="psec"><div class="wrap fade"><h2>What I have done so far</h2>
+<h3>A geometric descriptor: the Geometric Volume Coefficient (GVC)</h3>
+<p>Starting from each organ&rsquo;s differential distance-to-target histogram (dDTH) &mdash; how much organ volume sits at each distance from the target &mdash; I split the organ into three zones: the <b>overlapped</b> volume (intrinsic complexity), the <b>near-compression</b> volume that can&rsquo;t be spared because of machine dose-gradient limits, and the <b>safe</b> volume far enough to spare. These combine into a normalised <b>GVC on a 0&ndash;1 scale</b>, where a higher value means a harder organ.</p>
+<h3>From organ to patient</h3>
+<p>Organ-level GVCs are aggregated into a single patient-level score using a <b>quadratic, self-weighted</b> formulation (GVC&sup2;&times;w): high-complexity organs dominate without low-complexity ones being ignored, and each organ also carries a clinical-priority weight drawn from QUANTEC/RTOG-type standards rather than chosen arbitrarily. The result is standardised and reproducible across centres.</p><div class="stats"><div class="stat"><div class="num">0&ndash;1</div><div class="lbl">GVC scale</div></div><div class="stat"><div class="num">3</div><div class="lbl">volume zones</div></div><div class="stat"><div class="num">4</div><div class="lbl">proposed QA classes</div></div></div><h3>Worked example &mdash; a real patient</h3><table class="rtable"><tr><th>Organ</th><th>GVC</th><th>Clinical weight</th><th>Contribution to patient GVC</th></tr><tr><td>Chiasma</td><td class="mono">0.6875</td><td>0.90</td><td class="mono">79.4%</td></tr><tr><td>Optic nerve</td><td class="mono">0.3037</td><td>0.90</td><td class="mono">15.5%</td></tr><tr><td>Tronc (brainstem)</td><td class="mono">0.1311</td><td>0.95</td><td class="mono">3.0%</td></tr><tr><td>Hippocampe</td><td class="mono">0.1267</td><td>0.65</td><td class="mono">2.0%</td></tr><tr><td>Enc&eacute;phale</td><td class="mono">0.0235</td><td>0.75</td><td class="mono">0.1%</td></tr></table><p class="cap" style="font-size:12px;color:var(--muted)">A case where the chiasma dominates the complexity &mdash; exactly the kind of geometry-driven difficulty a pass/fail flag would hide.</p></div></section><section class="psec"><div class="wrap fade"><h2>A fairer QA verdict</h2>
+<p>With the descriptor in hand, a failed plan can be split apart. If targets and organs aren&rsquo;t both satisfied but the TTC is low, that&rsquo;s a genuinely <b>suboptimal plan</b>. If the TTC is high, it&rsquo;s a <b>complexity-limited case</b> &mdash; theoretically a fail, but clinically the best achievable. The proposed QA therefore reports four classes instead of two:</p><ul><li><b>True</b> &mdash; all goals met.</li><li><b>False</b> &mdash; no goals met.</li><li><b>Suboptimal</b> &mdash; one goal missed, low complexity (planning can improve).</li><li><b>TTC-limited</b> &mdash; compromise forced by high anatomical complexity.</li></ul></div></section><section class="psec"><div class="wrap fade"><h2>Where this is heading</h2>
+<p>The next step is automation: training models to predict these four classes directly from data. I plan to start with attention-based <b>Multiple Instance Learning on tabular clinical and DVH data</b>, then bring in patient DICOM (CT, RTDOSE), and finally fuse both streams in a multimodal framework on the REACH multi-institutional database. A first practical check is already in view &mdash; using organ-level GVCs as input features for toxicity prediction, since higher complexity should track higher toxicity risk.</p>
+<div class="note"><b>Status:</b> descriptor formulated and validated on real patient data; integration logic defined; multimodal automation in progress. Code repository going public on GitHub soon.</div></div></section><footer><div class="wrap" style="flex-direction:column;align-items:stretch">
+<div class="spectrum-line"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+<span class="small">Muhammad Sufyan &middot; Caen, France</span>
+<span class="small"><a href="mailto:muhammad.sufyan@etu.unicaen.fr">muhammad.sufyan@etu.unicaen.fr</a> &middot;
+<a href="https://github.com/mesufyan">GitHub</a> &middot; <a href="https://www.linkedin.com/in/sufyann">LinkedIn</a> &middot;
+<a href="https://orcid.org/0009-0007-3161-0716">ORCID</a></span>
+</div></div></footer>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script></body></html>
