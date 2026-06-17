@@ -314,3 +314,7 @@ footer .spectrum-line{height:3px;width:100%;background:var(--spectrum);border-ra
 .card .foot{position:relative;z-index:2}
 .card .foot .repo{position:relative;z-index:2}
 .card .readmore{color:var(--cobalt);font-size:13px;font-weight:600}
+
+/* repo as interactive span inside the card link */
+.card .repo[role=link]{cursor:pointer}
+.card .repo.soon{cursor:default}
