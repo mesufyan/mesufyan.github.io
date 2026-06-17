@@ -307,3 +307,10 @@ footer .spectrum-line{height:3px;width:100%;background:var(--spectrum);border-ra
 .ntcp-row{height:118px}
 .ntcp-bar-wrap{min-width:0}
 .figure .fig-cap{text-align:center}
+
+/* ---------- project card: stretched-link (no nested anchors) ---------- */
+.card{cursor:pointer}
+.card-stretch{position:absolute;inset:0;z-index:1;border-radius:var(--r)}
+.card .foot{position:relative;z-index:2}
+.card .foot .repo{position:relative;z-index:2}
+.card .readmore{color:var(--cobalt);font-size:13px;font-weight:600}
