@@ -257,3 +257,44 @@ footer .spectrum-line{height:3px;width:100%;background:var(--spectrum);border-ra
 
 .note{background:#eef4f8;border:1px solid #d4e3ee;border-radius:var(--r);padding:16px 18px;font-size:14.5px;color:var(--ink-2);margin:16px 0}
 .note b{color:var(--cobalt-deep)}
+
+/* ---------- figures ---------- */
+.figure{margin:20px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--paper-2);padding:18px}
+.figure svg{width:100%;height:auto;display:block}
+.fig-cap{font-size:12.5px;color:var(--muted);margin-top:10px;font-family:"IBM Plex Mono",monospace;line-height:1.5}
+.fig-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.fig-grid{grid-template-columns:1fr}}
+
+/* card footer pinned to bottom so all cards align */
+.card .foot{margin-top:auto;padding-top:18px}
+
+/* clickable inline links in prose */
+.psec p a, .about p a, .li p a, .entry p a, .entry .org a{color:var(--cobalt);text-decoration:none;border-bottom:1px solid rgba(27,92,143,.3)}
+.psec p a:hover, .about p a:hover, .li p a:hover, .entry p a:hover, .entry .org a:hover{border-bottom-color:var(--cobalt)}
+
+/* ---------- skills block ---------- */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skillcol{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.skillcol .h{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalt);margin-bottom:14px}
+.skillcol .chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;padding:5px 11px;border-radius:7px;background:#eef2f6;color:var(--ink-2);border:1px solid var(--line)}
+@media(max-width:760px){.skills{grid-template-columns:1fr}}
+
+/* ---------- interactive sim ---------- */
+.sim{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:26px;margin-top:8px}
+.sim-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:center}
+.sim svg{width:100%;height:auto;display:block}
+.sim-control{margin-top:22px}
+.sim-control label{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px}
+.sim-control input[type=range]{width:100%;accent-color:var(--cobalt);height:4px}
+.sim-readout{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-2);margin-top:8px}
+.sim-readout b{color:var(--ink)}
+.sim-callout{margin-top:18px;border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.5;background:#fdeceb;border:1px solid #f4c9c6;color:#8f2d27;display:none}
+.sim-callout.show{display:block}
+.sim-callout a{color:#8f2d27;font-weight:600;text-decoration:underline}
+.ntcp-row{display:flex;align-items:flex-end;gap:14px;height:150px;padding:0 4px}
+.ntcp-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.ntcp-bar{width:100%;border-radius:6px 6px 0 0;transition:height .12s ease}
+.ntcp-val{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.ntcp-lbl{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);margin-top:8px}
+@media(max-width:760px){.sim-grid{grid-template-columns:1fr;gap:20px}}

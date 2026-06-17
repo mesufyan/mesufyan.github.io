@@ -1,104 +1,133 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Muhammad Sufyan — AI for Radiation Oncology</title>
-<meta name="description" content="Muhammad Sufyan — medical physicist working on machine learning for radiotherapy quality assurance.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
-<body><nav class="nav"><div class="wrap">
-<a class="brand" href="index.html">Muhammad <span>Sufyan</span></a>
-<button class="navtoggle" aria-label="Menu" onclick="document.getElementById('nv').classList.toggle('open')">&#9776;</button>
-<div class="navlinks" id="nv"><a href="index.html" class="active">Home</a><a href="research.html">Research</a><a href="projects.html">Projects</a><a href="cv.html">CV &amp; Contact</a></div>
-</div></nav><header class="hero"><div class="wrap"><div class="hero-grid">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Muhammad Sufyan — AI for Radiation Oncology</title><meta name="description" content="Muhammad Sufyan — medical physicist working on machine learning and deep learning for radiotherapy QA."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><nav class="nav"><div class="wrap"><a class="brand" href="index.html">Muhammad <span>Sufyan</span></a><button class="navtoggle" aria-label="Menu" onclick="document.getElementById('nv').classList.toggle('open')">&#9776;</button><div class="navlinks" id="nv"><a href="index.html" class="active">Home</a><a href="research.html">Research</a><a href="projects.html">Projects</a><a href="cv.html">CV &amp; Contact</a></div></div></nav><header class="hero"><div class="wrap"><div class="hero-grid">
 <div class="fade in">
 <p class="eyebrow">AI for Radiation Oncology</p>
 <h1>Muhammad Sufyan</h1>
-<p class="lead">Medical physicist building <b>interpretable machine-learning</b> for quality assurance and treatment optimisation in radiotherapy.</p>
-<div class="btns">
-<a class="btn btn-primary" href="projects.html">View projects</a>
-<a class="btn btn-ghost" href="assets/Muhammad_Sufyan_CV.pdf" download>Download CV</a>
-</div>
+<p class="lead">Medical physicist building <b>machine learning and deep learning</b> for quality assurance and treatment optimisation in radiotherapy.</p>
+<div class="btns"><a class="btn btn-primary" href="projects.html">View projects</a>
+<a class="btn btn-ghost" href="assets/Muhammad_Sufyan_CV.pdf" download>Download CV</a></div>
 <div class="social">
-<a href="mailto:muhammad.sufyan@etu.unicaen.fr">&#9993; Email</a>
-<a href="https://github.com/mesufyan">&#9733; GitHub</a>
-<a href="https://www.linkedin.com/in/sufyann">in LinkedIn</a>
-<a href="https://orcid.org/0009-0007-3161-0716">iD ORCID</a>
-</div>
-</div>
-<div class="portrait-card fade in">
-<img class="portrait" src="assets/sufyan.png" alt="Muhammad Sufyan">
-<div class="dvh-wrap"><svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" class="dvh" role="img" aria-label="Dose-volume histogram illustration">
-<defs>
-<linearGradient id="sp" x1="0" y1="0" x2="1" y2="0">
-<stop offset="0" stop-color="#2E4A8F"/><stop offset="0.3" stop-color="#1FA0B3"/>
-<stop offset="0.55" stop-color="#4FB36B"/><stop offset="0.78" stop-color="#E8B23A"/>
-<stop offset="1" stop-color="#D6453C"/></linearGradient></defs>
-<rect x="48" y="14" width="352" height="216" fill="#fff" stroke="#E2E7ED"/>
-<!-- grid -->
-<g stroke="#EEF2F6" stroke-width="1">
-<line x1="48" y1="68" x2="400" y2="68"/><line x1="48" y1="122" x2="400" y2="122"/>
-<line x1="48" y1="176" x2="400" y2="176"/>
-<line x1="136" y1="14" x2="136" y2="230"/><line x1="224" y1="14" x2="224" y2="230"/>
-<line x1="312" y1="14" x2="312" y2="230"/></g>
-<!-- axes -->
-<line x1="48" y1="230" x2="400" y2="230" stroke="#14202E" stroke-width="1.5"/>
-<line x1="48" y1="14" x2="48" y2="230" stroke="#14202E" stroke-width="1.5"/>
-<!-- target (CTV): stays at 100% then steep drop near prescription -->
-<path class="dvh-line" d="M48,20 L300,20 C322,20 332,60 340,140 C346,200 360,224 400,226"
- fill="none" stroke="#D6453C" stroke-width="2.6"/>
-<!-- OAR 1 (parotid): drops early -->
-<path class="dvh-line" d="M48,20 C110,30 150,120 210,190 C250,220 300,226 400,228"
- fill="none" stroke="#1FA0B3" stroke-width="2.4" style="animation-delay:.5s"/>
-<!-- OAR 2: drops earliest -->
-<path class="dvh-line" d="M48,20 C90,40 120,160 170,210 C210,226 280,228 400,229"
- fill="none" stroke="#4FB36B" stroke-width="2.2" style="animation-delay:.7s"/>
-<!-- labels -->
-<text x="232" y="252" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B7C8E" text-anchor="middle">Dose &rarr;</text>
-<text x="20" y="125" font-family="IBM Plex Mono,monospace" font-size="11" fill="#6B7C8E" transform="rotate(-90,20,125)" text-anchor="middle">Volume %</text>
-<rect x="318" y="30" width="74" height="3" fill="url(#sp)" rx="2"/>
-<text x="318" y="48" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#6B7C8E">isodose scale</text>
-</svg>
-<div class="dvh-cap">A dose&ndash;volume histogram &mdash; the everyday artefact of the work: target coverage held high, organs at risk pushed low.</div>
-</div>
-</div>
+<a href="mailto:muhammad.sufyan@etu.unicaen.fr">Email</a><a href="https://github.com/mesufyan" target="_blank" rel="noopener">GitHub</a>
+<a href="https://www.linkedin.com/in/sufyann" target="_blank" rel="noopener">LinkedIn</a><a href="https://orcid.org/0009-0007-3161-0716" target="_blank" rel="noopener">ORCID</a>
+</div></div>
+<div class="portrait-card fade in"><img class="portrait" src="assets/sufyan.png" alt="Muhammad Sufyan"></div>
 </div></div></header>
 
+
 <section class="block"><div class="wrap">
-<div class="rule"></div>
+<div class="sec-head fade"><p class="eyebrow">Interactive &middot; from my Digital Twins work</p>
+<h2>Why conformity matters &mdash; and where physics runs out</h2>
+<p>Move the organ at risk toward the tumour. Watch how each beam type deposits dose, and how the predicted complication risk (NTCP) climbs. Ions spare far better &mdash; until the organ gets too close.</p></div>
+<div class="sim fade">
+<div class="sim-grid">
+<div>
+<svg id="doseSvg" viewBox="0 0 440 240" xmlns="http://www.w3.org/2000/svg" aria-label="Dose vs distance from target for four modalities">
+<rect x="44" y="10" width="384" height="180" fill="#fff" stroke="#E2E7ED"/>
+<g id="grid"></g>
+<path id="cPhoton" fill="none" stroke="#D6453C" stroke-width="2.6"/>
+<path id="cProton" fill="none" stroke="#E8B23A" stroke-width="2.4"/>
+<path id="cCarbon" fill="none" stroke="#1FA0B3" stroke-width="2.4"/>
+<path id="cHelium" fill="none" stroke="#4FB36B" stroke-width="2.4"/>
+<line id="oarLine" x1="0" y1="10" x2="0" y2="190" stroke="#14202E" stroke-width="1.6" stroke-dasharray="4 3"/>
+<circle id="dPhoton" r="4" fill="#D6453C"/><circle id="dProton" r="4" fill="#E8B23A"/>
+<circle id="dCarbon" r="4" fill="#1FA0B3"/><circle id="dHelium" r="4" fill="#4FB36B"/>
+<line x1="44" y1="190" x2="428" y2="190" stroke="#14202E" stroke-width="1.4"/>
+<line x1="44" y1="10" x2="44" y2="190" stroke="#14202E" stroke-width="1.4"/>
+<text id="oarLbl" x="0" y="206" font-family="IBM Plex Mono,monospace" font-size="10" fill="#14202E" text-anchor="middle">OAR</text>
+<text x="236" y="224" font-family="IBM Plex Mono,monospace" font-size="10" fill="#6B7C8E" text-anchor="middle">Distance from tumour edge &rarr;</text>
+<text x="18" y="100" font-family="IBM Plex Mono,monospace" font-size="10" fill="#6B7C8E" transform="rotate(-90,18,100)" text-anchor="middle">Dose at OAR</text>
+</svg>
+<div class="sim-control">
+<label for="oar">Organ-at-risk distance: <span id="oarVal">12 mm</span></label>
+<input id="oar" type="range" min="1" max="40" value="12" step="1">
+</div>
+</div>
+<div>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6B7C8E;margin-bottom:12px">Predicted complication risk (NTCP)</div>
+<div class="ntcp-row">
+<div class="ntcp-bar-wrap"><span class="ntcp-val" id="vPhoton">0%</span><div class="ntcp-bar" id="bPhoton" style="background:#D6453C"></div><span class="ntcp-lbl">Photon</span></div>
+<div class="ntcp-bar-wrap"><span class="ntcp-val" id="vProton">0%</span><div class="ntcp-bar" id="bProton" style="background:#E8B23A"></div><span class="ntcp-lbl">Proton</span></div>
+<div class="ntcp-bar-wrap"><span class="ntcp-val" id="vCarbon">0%</span><div class="ntcp-bar" id="bCarbon" style="background:#1FA0B3"></div><span class="ntcp-lbl">Carbon</span></div>
+<div class="ntcp-bar-wrap"><span class="ntcp-val" id="vHelium">0%</span><div class="ntcp-bar" id="bHelium" style="background:#4FB36B"></div><span class="ntcp-lbl">Helium</span></div>
+</div>
+</div>
+</div>
+<div class="sim-callout" id="callout">At very short distances, <b>even ions cannot fully spare the organ</b> &mdash; the limit becomes anatomical, not physical. This is exactly the regime my <a href="project-ttc.html">Tumour Topology Complexity descriptor (GVC)</a> is built to quantify.</div>
+<div class="fig-cap" style="margin-top:14px">Illustrative model anchored on my Digital Twins results (helium best OAR sparing, then carbon, proton, photon). Not a live treatment-planning calculation.</div>
+</div>
+</div></section>
+<script>
+(function(){
+ var X0=44,X1=428,Y0=10,Y1=190,W=X1-X0,H=Y1-Y0;
+ var Lm={photon:30,proton:14,carbon:10,helium:8}; // falloff length: smaller=better sparing
+ var maxD=40;
+ function dose(L,d){return Math.exp(-d/L);}            // dose at OAR, target=1
+ function ntcp(D){return 1/(1+Math.exp(-(D-0.42)/0.10));}
+ function px(d){return X0 + (d/maxD)*W;}
+ function py(v){return Y1 - v*H;}
+ // grid
+ var g=document.getElementById('grid'),gs='';
+ for(var i=1;i<4;i++){var y=Y0+i*H/4;gs+='<line x1="'+X0+'" y1="'+y+'" x2="'+X1+'" y2="'+y+'" stroke="#EEF2F6"/>';}
+ g.innerHTML=gs;
+ function path(L){var s='M';for(var d=0;d<=maxD;d+=1){s+=(d===0?'':' L')+px(d).toFixed(1)+','+py(dose(L,d)).toFixed(1);}return s;}
+ document.getElementById('cPhoton').setAttribute('d',path(Lm.photon));
+ document.getElementById('cProton').setAttribute('d',path(Lm.proton));
+ document.getElementById('cCarbon').setAttribute('d',path(Lm.carbon));
+ document.getElementById('cHelium').setAttribute('d',path(Lm.helium));
+ var slider=document.getElementById('oar');
+ function fmt(p){return Math.round(p*100)+'%';}
+ function upd(){
+   var d=+slider.value; document.getElementById('oarVal').textContent=d+' mm';
+   var x=px(d);
+   var ol=document.getElementById('oarLine');ol.setAttribute('x1',x);ol.setAttribute('x2',x);
+   var lbl=document.getElementById('oarLbl');lbl.setAttribute('x',x);
+   var anyHigh=false,total=0;
+   ['photon','proton','carbon','helium'].forEach(function(m){
+     var D=dose(Lm[m],d), N=ntcp(D);
+     var cap=m.charAt(0).toUpperCase()+m.slice(1);
+     var dot=document.getElementById('d'+cap);dot.setAttribute('cx',x);dot.setAttribute('cy',py(D));
+     document.getElementById('b'+cap).style.height=(N*120)+'px';
+     document.getElementById('v'+cap).textContent=fmt(N);
+   });
+   var allN=['photon','proton','carbon','helium'].map(function(m){return ntcp(dose(Lm[m],d));});
+   var minN=Math.min.apply(null,allN);
+   document.getElementById('callout').classList.toggle('show', minN>0.5);
+ }
+ slider.addEventListener('input',upd); upd();
+})();
+</script>
+
+
+<section class="block"><div class="wrap"><div class="rule"></div>
 <div class="about fade">
 <div><h2 style="font-size:30px">At the interface of physics, data, and the clinic</h2></div>
 <div>
-<p>I am a graduate researcher at <b>LPC Caen</b> and the <b>Centre Fran&ccedil;ois Baclesse</b>, where I develop predictive models to improve dose quality assurance (Dose QA) in radiotherapy clinical trials. My work draws on DVH features, RT-DICOM data (CT, RTSTRUCT, RTDOSE) and medical imaging to make automated QA more consistent, transparent, and fair.</p>
-<p>I am completing an Erasmus Mundus Joint Master&rsquo;s in Nuclear Physics across <b>Seville, Catania, and Caen</b>, building on a physics background that spans particle theory, plasma diagnostics, and Monte&nbsp;Carlo dosimetry. My through-line is the same: combining computational methods with problems that have direct clinical impact in cancer care.</p>
-</div>
-</div>
-</div></section>
+<p>I am a graduate researcher at <a href="https://www.lpc-caen.in2p3.fr/" target="_blank" rel="noopener">LPC Caen</a> and the <a href="https://www.baclesse.fr/" target="_blank" rel="noopener">Centre Fran&ccedil;ois Baclesse</a>, where I develop predictive models to improve dose quality assurance in radiotherapy clinical trials, using machine learning and deep learning on DVH features, RT-DICOM data (CT, RTSTRUCT, RTDOSE) and medical imaging.</p>
+<p>I am completing an <a href="https://www.emm-nucphys.eu/" target="_blank" rel="noopener">Erasmus Mundus Joint Master&rsquo;s in Nuclear Physics</a> across Seville, Catania, and Caen, building on a physics background spanning particle theory, plasma diagnostics, and Monte&nbsp;Carlo dosimetry. My through-line: combining computational methods with problems that have direct clinical impact in cancer care.</p>
+</div></div></div></section>
 
-<section class="block"><div class="wrap">
-<div class="glance fade">
+<section class="block"><div class="wrap"><div class="glance fade">
 <div class="cell"><div class="k">Now</div><div class="v">Graduate Researcher, LPC Caen &amp; Centre Fran&ccedil;ois Baclesse</div></div>
-<div class="cell"><div class="k">Studying</div><div class="v">MSc Medical Physics, Universit&eacute; de Caen Normandie</div></div>
+<div class="cell"><div class="k">Studying</div><div class="v">Erasmus Mundus Joint Master&rsquo;s in Nuclear Physics &mdash; medical-physics track, Caen</div></div>
 <div class="cell"><div class="k">Modelled</div><div class="v">684 head &amp; neck patients in ML toxicity pipelines</div></div>
-<div class="cell"><div class="k">Toolkit</div><div class="v">Python &middot; PyTorch &middot; LightGBM &middot; Pydicom &middot; MatRad</div></div>
-</div>
-</div></section>
+<div class="cell"><div class="k">Focus</div><div class="v">Interpretable AI for radiotherapy QA &amp; optimisation</div></div>
+</div></div></section>
 
 <section class="block"><div class="wrap">
-<div class="sec-head fade"><p class="eyebrow">PhD direction</p>
-<h2>Quantify &rarr; Integrate &rarr; Automate</h2>
-<p>My thesis lays the foundation for a doctoral project that rethinks radiotherapy QA in three stages &mdash; from a new measure of anatomical complexity to a fully automated, multimodal classifier.</p></div>
+<div class="sec-head fade"><p class="eyebrow">Skills</p><h2>What I work with</h2></div>
+<div class="skills fade">
+<div class="skillcol"><div class="h">Machine / Deep Learning</div><div class="chips">
+<span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">Deep neural networks</span><span class="chip">Multiple Instance Learning (attention)</span><span class="chip">LightGBM</span><span class="chip">Scikit-learn</span><span class="chip">Optuna</span><span class="chip">SHAP</span></div></div>
+<div class="skillcol"><div class="h">Medical Physics</div><div class="chips">
+<span class="chip">RT-DICOM (Pydicom)</span><span class="chip">MatRad</span><span class="chip">Treatment planning &amp; DVH</span><span class="chip">NTCP modelling</span><span class="chip">Radiotherapy QA</span></div></div>
+<div class="skillcol"><div class="h">Tools</div><div class="chips">
+<span class="chip">Linux</span><span class="chip">LaTeX</span><span class="chip">Git</span></div></div>
+</div></div></section>
+
+<section class="block"><div class="wrap">
+<div class="sec-head fade"><p class="eyebrow">PhD direction</p><h2>Quantify &rarr; Integrate &rarr; Automate</h2>
+<p>My thesis lays the foundation for a doctoral project that rethinks radiotherapy QA in three stages.</p></div>
 <div class="arc fade">
-<div class="step"><div class="bar"></div><div class="no">01 &middot; QUANTIFY</div><h3>Tumour Topology Complexity</h3><p>A geometric descriptor (GVC) that captures how intrinsically hard a case is to treat &mdash; anatomy plus machine deliverability.</p></div>
-<div class="step"><div class="bar"></div><div class="no">02 &middot; INTEGRATE</div><h3>A fairer QA verdict</h3><p>Use the descriptor to split a failed plan into &ldquo;suboptimal planning&rdquo; vs &ldquo;complexity-limited&rdquo;, beyond a blunt pass/fail.</p></div>
-<div class="step"><div class="bar"></div><div class="no">03 &middot; AUTOMATE</div><h3>Multimodal learning</h3><p>Attention-based Multiple Instance Learning on tabular + DICOM data to predict the new QA classes automatically.</p></div>
-</div>
-</div></section><footer><div class="wrap" style="flex-direction:column;align-items:stretch">
-<div class="spectrum-line"></div>
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
-<span class="small">Muhammad Sufyan &middot; Caen, France</span>
-<span class="small"><a href="mailto:muhammad.sufyan@etu.unicaen.fr">muhammad.sufyan@etu.unicaen.fr</a> &middot;
-<a href="https://github.com/mesufyan">GitHub</a> &middot; <a href="https://www.linkedin.com/in/sufyann">LinkedIn</a> &middot;
-<a href="https://orcid.org/0009-0007-3161-0716">ORCID</a></span>
-</div></div></footer>
-<script>
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
-document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-</script></body></html>
+<div class="step"><div class="bar"></div><div class="no">01 &middot; QUANTIFY</div><h3>Tumour Topology Complexity</h3><p>A geometric descriptor (GVC) capturing how intrinsically hard a case is &mdash; anatomy plus machine deliverability.</p></div>
+<div class="step"><div class="bar"></div><div class="no">02 &middot; INTEGRATE</div><h3>A fairer QA verdict</h3><p>Split a failed plan into &ldquo;suboptimal planning&rdquo; vs &ldquo;complexity-limited&rdquo;, beyond pass/fail.</p></div>
+<div class="step"><div class="bar"></div><div class="no">03 &middot; AUTOMATE</div><h3>Multimodal learning</h3><p>Attention-based Multiple Instance Learning on tabular + DICOM data to predict the new QA classes.</p></div>
+</div></div></section><footer><div class="wrap" style="flex-direction:column;align-items:stretch"><div class="spectrum-line"></div><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px"><span class="small">Muhammad Sufyan &middot; Caen, France</span><span class="small"><a href="mailto:muhammad.sufyan@etu.unicaen.fr">muhammad.sufyan@etu.unicaen.fr</a> &middot; <a href="https://github.com/mesufyan" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://www.linkedin.com/in/sufyann" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://orcid.org/0009-0007-3161-0716" target="_blank" rel="noopener">ORCID</a></span></div></div></footer><script>const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});document.querySelectorAll('.fade').forEach(el=>io.observe(el));</script></body></html>
