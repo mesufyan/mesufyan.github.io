@@ -61,7 +61,7 @@
  var Lm={photon:30,proton:14,carbon:10,helium:8}; // falloff length: smaller=better sparing
  var maxD=40;
  function dose(L,d){return Math.exp(-d/L);}            // dose at OAR, target=1
- function ntcp(D){return 1/(1+Math.exp(-(D-0.42)/0.10));}
+ function ntcp(D){return 1/(1+Math.exp(-(D-0.62)/0.20));}
  function px(d){return X0 + (d/maxD)*W;}
  function py(v){return Y1 - v*H;}
  // grid
@@ -85,7 +85,7 @@
      var D=dose(Lm[m],d), N=ntcp(D);
      var cap=m.charAt(0).toUpperCase()+m.slice(1);
      var dot=document.getElementById('d'+cap);dot.setAttribute('cx',x);dot.setAttribute('cy',py(D));
-     document.getElementById('b'+cap).style.height=(N*120)+'px';
+     document.getElementById('b'+cap).style.height=(N*100)+'px';
      document.getElementById('v'+cap).textContent=fmt(N);
    });
    var allN=['photon','proton','carbon','helium'].map(function(m){return ntcp(dose(Lm[m],d));});
